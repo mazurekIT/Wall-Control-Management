@@ -13,4 +13,5 @@ public interface SectionService {
     Section addSection(SectionDto dto);
     void delete(Section section);
     List<Section> findAllByDayOfWeek(String str);
+    List<Section> findAllByLevelId(Long id);
 }

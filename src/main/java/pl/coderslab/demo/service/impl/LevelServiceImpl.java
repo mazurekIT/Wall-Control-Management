@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.coderslab.demo.domain.Level;
+import pl.coderslab.demo.domain.Section;
 import pl.coderslab.demo.domain.dto.LevelDto;
 import pl.coderslab.demo.repository.LevelRepository;
 import pl.coderslab.demo.service.LevelService;
@@ -55,4 +56,10 @@ public class LevelServiceImpl implements LevelService {
     public void delete(Level level) {
         levelRepository.delete(level);
     }
+
+    @Override
+    public List<Level> findAllByName(String str) {
+        return levelRepository.findAllByName(str);
+    }
+
 }

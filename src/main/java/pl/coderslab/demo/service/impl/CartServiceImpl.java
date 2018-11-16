@@ -97,5 +97,10 @@ public class CartServiceImpl implements CartService {
         return cartRepository.save(cart);
     }
 
+    @Override
+    public List<Cart> findAllByGrupByCreated() {
+        return cartRepository.findAllByGrupByCreated();
+    }
+
 
 }

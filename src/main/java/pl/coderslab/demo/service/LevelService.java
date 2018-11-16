@@ -8,9 +8,14 @@ import java.util.List;
 public interface LevelService {
 
     Level save(Level c);
+
     List<Level> findAll();
+
     Level findOneById(Long id);
+
     Level addLevel(LevelDto dto);
+
     void delete(Level level);
 
+    List<Level> findAllByName(String str);
 }

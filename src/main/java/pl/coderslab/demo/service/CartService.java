@@ -15,5 +15,7 @@ public interface CartService {
 
     void delete(Cart cart);
     Cart addCart(CartDto dto);
-    public Cart updateCart(CartDto dto);
+    Cart updateCart(CartDto dto);
+
+    List<Cart> findAllByGrupByCreated();
 }

@@ -107,7 +107,17 @@
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="card-body">
 
-                    YYYYYYYYYYYY
+                    <td colspan="9">
+                        <a href="/search/days" class="btn btn-success btn-lg active" role="button"
+                           aria-pressed="true">SECTION BY DAY</a>
+                    </td>
+
+                    <td colspan="9">
+                        <a href="/search/levels" class="btn btn-success btn-lg active" role="button"
+                           aria-pressed="true">SECTION BY LEVEL</a>
+                    </td>
+
+
                 </div>
             </div>
         </div>

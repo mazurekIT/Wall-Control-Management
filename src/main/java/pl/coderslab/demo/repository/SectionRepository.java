@@ -13,4 +13,5 @@ public interface SectionRepository extends JpaRepository<Section,Long> { //repoz
     Section findByDayOfWeek(String name);
     Section findOneById(Long id);
     List<Section> findAllByDayOfWeek(String str);
+    List<Section> findAllByLevelId(Long id);
 }
