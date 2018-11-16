@@ -76,6 +76,11 @@ public class SectionServiceImpl implements SectionService {
         return sectionRepository.findAllByLevelId(id);
     }
 
+    @Override
+    public List<Section> findAllByInstructorId(Long id) {
+        return sectionRepository.findAllByInstructorId(id);
+    }
+
 
     @Override
     public void delete(Section section) {

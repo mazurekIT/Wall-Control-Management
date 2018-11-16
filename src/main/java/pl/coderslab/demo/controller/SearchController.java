@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.coderslab.demo.domain.Level;
 import pl.coderslab.demo.domain.Section;
+import pl.coderslab.demo.domain.User;
 import pl.coderslab.demo.service.CartService;
 import pl.coderslab.demo.service.LevelService;
 import pl.coderslab.demo.service.SectionService;
+import pl.coderslab.demo.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,8 @@ public class SearchController { //strefa chroniona skonfigurowana w SecurityConf
     CartService cartService;
     @Autowired
     LevelService levelService;
+    @Autowired
+    UserService userService;
 
     //---------------------------------------------------------------------------
     //---SEKCJE szukane po dniu
@@ -61,6 +65,23 @@ public class SearchController { //strefa chroniona skonfigurowana w SecurityConf
     }
 
 
+//---------------------------------------------------------------------------
+    //---SEKCJE szukane po instructor
+    //---------------------------------------------------------------------------
+    @RequestMapping(path = "/instructors", method = RequestMethod.GET)
+    public String sectionByInstructor(Model model) {
+        return "table/instructors";
+    }
+
+
+    @RequestMapping(path = "/section/byins/{ins}", method = RequestMethod.GET)
+    public String sectionByInstructor(@PathVariable Long ins, Model model) {
+        List<Section> sections = sectionService.findAllByInstructorId(ins);
+        model.addAttribute("sections", sections);
+        return "table/sectionbyinstr";
+    }
+
+
     //---------------------------------------------------------------------------
     //---PODSUMOWUJE dni sprzedażowe
     //---------------------------------------------------------------------------
@@ -91,6 +112,11 @@ public class SearchController { //strefa chroniona skonfigurowana w SecurityConf
     @ModelAttribute("levels")
     public List<Level> levels() {
         List<Level> all = levelService.findAll();
+        return all;
+    }
+    @ModelAttribute("instructors")
+    public List<User  > instructors() {
+        List<User> all = userService.findAll();
         return all;
     }
 }

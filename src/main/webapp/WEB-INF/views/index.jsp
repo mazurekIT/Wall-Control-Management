@@ -117,6 +117,11 @@
                            aria-pressed="true">SECTION BY LEVEL</a>
                     </td>
 
+                    <td colspan="9">
+                        <a href="/search/instructors" class="btn btn-success btn-lg active" role="button"
+                           aria-pressed="true">SECTION BY INSTRUCTOR</a>
+                    </td>
+
 
                 </div>
             </div>

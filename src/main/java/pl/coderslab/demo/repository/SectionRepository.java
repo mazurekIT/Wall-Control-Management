@@ -8,10 +8,10 @@ import pl.coderslab.demo.domain.User;
 import java.util.List;
 
 @Repository
-public interface SectionRepository extends JpaRepository<Section,Long> { //repozytorium dla User (punkt styku z frameworkiem)
+public interface SectionRepository extends JpaRepository<Section,Long> {
 
-    Section findByDayOfWeek(String name);
     Section findOneById(Long id);
     List<Section> findAllByDayOfWeek(String str);
     List<Section> findAllByLevelId(Long id);
+    List<Section> findAllByInstructorId(Long id);
 }
