@@ -51,9 +51,9 @@
                 <i class="fas fa-user-circle fa-fw"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="/blank">Settings Profile</a>
-                <a class="dropdown-item" href="/blank">Activity Log</a>
-                <div class="dropdown-divider"></div>
+                <%--<a class="dropdown-item" href="/blank">Settings Profile</a>--%>
+                <%--<a class="dropdown-item" href="/blank">Activity Log</a>--%>
+                <%--<div class="dropdown-divider"></div>--%>
                 <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">Logout</a>
             </div>
         </li>
@@ -121,11 +121,11 @@
 
         <security:authorize access="hasRole('ADMIN')">  <!--opcja widoczna tylko dla ADMINA-->
 
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
-        </li>
+        <%--<li class="nav-item">--%>
+            <%--<a class="nav-link" href="tables.html">--%>
+                <%--<i class="fas fa-fw fa-table"></i>--%>
+                <%--<span>Tables</span></a>--%>
+        <%--</li>--%>
 
 
             <li class="nav-item dropdown">

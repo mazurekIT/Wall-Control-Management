@@ -35,16 +35,35 @@
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <form:hidden path="id" value="${cart.id}"/>
 
-                oooo
+                <div class="form-group">
+
+                    <label for="client">Clients</label>
+                    <select name="client" class="form-control" id="client">
+                        <option selected>Choose ...</option>
+
+                        <c:forEach items="${clients}" var="client">
+                            <option value="${client.id}">${client.firstName}-${client.lastName}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <div class="form-group">
+
+                    <label for="ticket">Tickets</label>
+                    <select multiple name="ticket" class="form-control" id="ticket">
+                        <option selected>Choose ...</option>
+
+                        <c:forEach items="${tickets}" var="ticket">
+                            <option value="${ticket.id}">${ticket.name}</option>
+                        </c:forEach>
+                    </select>
+                </div>
 
                 <input type="submit" class="btn btn-primary btn-block" value="Save"/>
                 <div class="col-md-6">
                     <div class="form-label-group">
                         <form:errors path="*"/>
-                            <%--<form:errors path="firstName"/>--%>
-                            <%--<form:errors path="username"/>--%>
-                            <%--<form:errors path="password"/>--%>
-                            <%--<form:errors path="confirm_password"/>--%>
+                            
                     </div>
                 </div>
             </form:form>

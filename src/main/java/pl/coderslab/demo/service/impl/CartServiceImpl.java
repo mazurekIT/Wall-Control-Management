@@ -71,6 +71,7 @@ public class CartServiceImpl implements CartService {
         cart.setClient(dto.getClient());
         Double valueCart = 0.;
         List<Ticket> ticketList = dto.getTicket();
+        cart.setTicket(dto.getTicket());
 
         for (Ticket x : ticketList) {
             valueCart+=x.getValue();
@@ -79,5 +80,22 @@ public class CartServiceImpl implements CartService {
         cart.setValue(valueCart);
         return cartRepository.save(cart);
     }
+    @Override
+    public Cart updateCart(CartDto dto) {
+
+        Cart cart = new Cart();
+        cart.setClient(dto.getClient());
+        Double valueCart = 0.;
+        List<Ticket> ticketList = dto.getTicket();
+        cart.setTicket(dto.getTicket());
+
+        for (Ticket x : ticketList) {
+            valueCart+=x.getValue();
+        }
+
+        cart.setValue(valueCart);
+        return cartRepository.save(cart);
+    }
+
 
 }

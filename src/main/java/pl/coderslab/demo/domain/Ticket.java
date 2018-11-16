@@ -3,7 +3,9 @@ package pl.coderslab.demo.domain;
 import lombok.*;
 
 import javax.persistence.Entity;
-import javax.swing.border.EmptyBorder;
+import javax.persistence.ManyToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,5 +19,8 @@ public class Ticket extends BaseEntity {
     private String name;
     private Double value;
 
+//
+//    @ManyToMany(mappedBy = "ticket")
+//    private List<Cart> carts = new ArrayList<>();
 
 }

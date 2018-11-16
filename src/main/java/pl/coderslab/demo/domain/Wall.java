@@ -23,17 +23,17 @@ public class Wall extends BaseEntity{
     private String description;
     private String openHours;
 
-    @ManyToMany
-    private List<Ticket> ticket=new ArrayList<>();
+//    @ManyToMany
+//    private List<Ticket> ticket=new ArrayList<>();
 
-    @ManyToMany
-    private List<Client> clients = new ArrayList<>();
+//    @ManyToMany
+//    private List<Client> clients = new ArrayList<>();
+//
+//    @OneToMany
+//    private List<Section> sections = new ArrayList<>();
 
-    @OneToMany
-    private List<Section> sections = new ArrayList<>();
-
-    @ManyToMany
-    private List<User> users = new ArrayList<>();
+//    @ManyToMany
+//    private List<User> users = new ArrayList<>();
 
 
 }

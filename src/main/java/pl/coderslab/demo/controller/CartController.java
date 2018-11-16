@@ -85,6 +85,12 @@ public class CartController { //strefa chroniona skonfigurowana w SecurityConfig
 
     @RequestMapping(path = "/update/{id}", method = RequestMethod.POST)
     public String update(@Valid Cart cart, BindingResult result) {
+        List<Ticket> ticket = cart.getTicket();
+        double v = 0.;
+        for (Ticket x:ticket             ) {
+            v+=x.getValue();
+        }
+        cart.setValue(v);
         cartService.save(cart);
         return "redirect:/cart/all";
 
@@ -104,4 +110,8 @@ public class CartController { //strefa chroniona skonfigurowana w SecurityConfig
         List<Client> all = clientService.findAll();
         return all;
     }
+
+
+
+
 }

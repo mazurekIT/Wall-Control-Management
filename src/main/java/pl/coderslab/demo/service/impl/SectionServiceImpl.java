@@ -67,6 +67,11 @@ public class SectionServiceImpl implements SectionService {
     }
 
     @Override
+    public List<Section> findAllByDayOfWeek(String str) {
+        return sectionRepository.findAllByDayOfWeek(str);
+    }
+
+    @Override
     public void delete(Section section) {
         sectionRepository.delete(section);
     }

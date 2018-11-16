@@ -12,4 +12,5 @@ public interface SectionService {
     Section findOneById(Long id);
     Section addSection(SectionDto dto);
     void delete(Section section);
+    List<Section> findAllByDayOfWeek(String str);
 }

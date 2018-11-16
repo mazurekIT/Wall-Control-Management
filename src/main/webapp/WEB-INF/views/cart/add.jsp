@@ -41,7 +41,7 @@
                         <option selected>Choose ...</option>
 
                         <c:forEach items="${clients}" var="client">
-                            <option value="${client.id}">${client.firstName}</option>
+                            <option value="${client.id}">${client.firstName}-${client.lastName}</option>
                         </c:forEach>
                     </select>
                 </div>

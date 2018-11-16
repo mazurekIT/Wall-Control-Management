@@ -2,9 +2,7 @@ package pl.coderslab.demo.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +22,8 @@ public class Cart extends BaseEntity {
     @OneToOne
     private Client client;
 
-    @OneToMany
-    private List<Ticket> ticket =new ArrayList<>();
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST},fetch = FetchType.EAGER)
+    private List<Ticket> ticket = new ArrayList<>();
 
 
 }
