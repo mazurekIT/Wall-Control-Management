@@ -39,7 +39,8 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input value="${section.hourStart}" type="text" id="hourStart" name="hourStart" class="form-control"
+                                <input value="${section.hourStart}" type="text" id="hourStart" name="hourStart"
+                                       class="form-control"
                                        placeholder="HourStart"
                                        required="required" autofocus="autofocus">
                                 <label for="hourStart">Hour Start</label>
@@ -47,7 +48,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input value="${section.maxPerson}" type="text" id="maxPerson" name="maxPerson" class="form-control"
+                                <input value="${section.maxPerson}" type="text" id="maxPerson" name="maxPerson"
+                                       class="form-control"
                                        placeholder="MaxPerson"
                                        required="required" autofocus="autofocus">
                                 <label for="maxPerson">Max Person</label>
@@ -57,7 +59,7 @@
                 </div>
 
                 <label for="dayOfWeek">Day of Week</label>
-                <select name="dayOfWeek" id="dayOfWeek" class="form-control">
+                <select size="4" path="dayOfWeek" name="dayOfWeek" id="dayOfWeek" class="form-control">
                     <option selected>Choose ...</option>
                     <option>Mon</option>
                     <option>Tue</option>
@@ -70,7 +72,7 @@
 
                 <div class="form-group">
                     <label for="instructor">Instructor</label>
-                    <select name="instructor" class="form-control" id="instructor">
+                    <select size="4" name="instructor" class="form-control" id="instructor">
                         <option selected>Choose ...</option>
 
                         <c:forEach items="${instructors}" var="instructor">
@@ -78,10 +80,12 @@
                         </c:forEach>
                     </select>
                 </div>
+
+
                 <div class="form-group">
 
                     <label for="level">Level</label>
-                    <select name="level" class="form-control" id="level">
+                    <select size="4" name="level" class="form-control" id="level">
                         <option selected>Choose ...</option>
 
                         <c:forEach items="${levels}" var="level">

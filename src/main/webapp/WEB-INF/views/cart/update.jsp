@@ -38,11 +38,11 @@
                 <div class="form-group">
 
                     <label for="client">Clients</label>
-                    <select name="client" class="form-control" id="client">
+                    <select  size="5" name="client" class="form-control" id="client">
                         <option selected>Choose ...</option>
 
                         <c:forEach items="${clients}" var="client">
-                            <option value="${client.id}">${client.firstName}-${client.lastName}</option>
+                            <option value="${client.id}">${client.firstName}  ${client.lastName}</option>
                         </c:forEach>
                     </select>
                 </div>
@@ -50,7 +50,7 @@
                 <div class="form-group">
 
                     <label for="ticket">Tickets</label>
-                    <select multiple name="ticket" class="form-control" id="ticket">
+                    <select  size="5" multiple name="ticket" class="form-control" id="ticket">
                         <option selected>Choose ...</option>
 
                         <c:forEach items="${tickets}" var="ticket">
