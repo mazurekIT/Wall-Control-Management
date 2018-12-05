@@ -30,4 +30,51 @@ public class Section extends BaseEntity{
     @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<Client> clients=new ArrayList<>();
 
+    public String getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public void setDayOfWeek(String dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
+    }
+
+    public String getHourStart() {
+        return hourStart;
+    }
+
+    public void setHourStart(String hourStart) {
+        this.hourStart = hourStart;
+    }
+
+    public int getMaxPerson() {
+        return maxPerson;
+    }
+
+    public void setMaxPerson(int maxPerson) {
+        this.maxPerson = maxPerson;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
+
+    public User getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(User instructor) {
+        this.instructor = instructor;
+    }
+
+    public List<Client> getClients() {
+        return clients;
+    }
+
+    public void setClients(List<Client> clients) {
+        this.clients = clients;
+    }
 }
