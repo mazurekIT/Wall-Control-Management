@@ -58,41 +58,64 @@
                     </div>
                 </div>
 
-                <label for="dayOfWeek">Day of Week</label>
-                <select size="4" path="dayOfWeek" name="dayOfWeek" id="dayOfWeek" class="form-control">
-                    <option selected>Choose ...</option>
-                    <option>Mon</option>
-                    <option>Tue</option>
-                    <option>Wed</option>
-                    <option>Thu</option>
-                    <option>Fri</option>
-                    <option>Sat</option>
-                    <option>Sun</option>
-                </select>
-
                 <div class="form-group">
-                    <label for="instructor">Instructor</label>
-                    <select size="4" name="instructor" class="form-control" id="instructor">
+                    <label for="dayOfWeek">Day of Week</label>
+                    <select path="dayOfWeek" name="dayOfWeek" id="dayOfWeek" class="form-control">
                         <option selected>Choose ...</option>
-
-                        <c:forEach items="${instructors}" var="instructor">
-                            <option value="${instructor.id}">${instructor.username}</option>
+                        <c:forEach items="${days}" var="day">
+                            <option value="${day}">${day}</option>
+                            <c:choose>
+                                <c:when test="${section.dayOfWeek==null}">
+                                    <option value="${day}">${day}</option>
+                                </c:when>
+                                <c:otherwise>
+                                    <option selected value="${day}">${day}</option>
+                                </c:otherwise>
+                            </c:choose>
                         </c:forEach>
                     </select>
                 </div>
 
+                <div class="form-group">
+                    <label for="instructor">Instructor</label>
+                    <select name="instructor" class="form-control" id="instructor">
+                        <option selected>Choose ...</option>
+
+                        <c:forEach items="${instructors}" var="instructor">
+                            <c:choose>
+                                <c:when test="${section.instructor.id==null}">
+                                    <option value="${instructor.id}">${instructor.username}</option>
+                                </c:when>
+                                <c:otherwise>
+                                    <option selected value="${instructor.id}">${instructor.username}</option>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                    </select>
+                </div>
 
                 <div class="form-group">
 
                     <label for="level">Level</label>
-                    <select size="4" name="level" class="form-control" id="level">
+                    <select name="level" class="form-control" id="level">
                         <option selected>Choose ...</option>
 
                         <c:forEach items="${levels}" var="level">
-                            <option value="${level.id}">${level.name}</option>
+
+                            <c:choose>
+                                <c:when test="${section.level.id==null}">
+                                    <option value="${level.id}">${level.name}</option>
+                                </c:when>
+
+                                <c:otherwise>
+                                    <option selected value="${level.id}">${level.name}</option>
+                                </c:otherwise>
+                            </c:choose>
+
                         </c:forEach>
                     </select>
                 </div>
+
                 <div class="form-group">
 
                     <label for="clients">Clients</label>
@@ -100,7 +123,20 @@
                         <option selected>Choose ...</option>
 
                         <c:forEach items="${clients}" var="client">
+
+                            <%--<c:choose>--%>
+                                <%--<c:when test="${section.}">--%>
+                                    <%--<option value="${client.id}">${client.firstName}</option>--%>
+                                <%--</c:when>--%>
+                                <%----%>
+                                <%--<c:otherwise>--%>
+                                    <%--<option selected value="${client.id}">${client.firstName}</option>--%>
+                                <%--</c:otherwise>--%>
+                            <%--</c:choose>--%>
+
+
                             <option value="${client.id}">${client.firstName}</option>
+
                         </c:forEach>
                     </select>
                 </div>
@@ -109,10 +145,7 @@
                 <div class="col-md-6">
                     <div class="form-label-group">
                         <form:errors path="*"/>
-                            <%--<form:errors path="firstName"/>--%>
-                            <%--<form:errors path="username"/>--%>
-                            <%--<form:errors path="password"/>--%>
-                            <%--<form:errors path="confirm_password"/>--%>
+
                     </div>
                 </div>
             </form:form>

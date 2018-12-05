@@ -87,16 +87,17 @@ public class SectionController {
     @RequestMapping(path = "/update/{id}", method = RequestMethod.GET)
     public String update(@PathVariable long id, Model model) {
         model.addAttribute("section", sectionService.findOneById(id));
-        model.addAttribute("levels",levels());
-        model.addAttribute("instructors",instructors());
-        model.addAttribute("clients",clients());
+        model.addAttribute("levels", levels());
+        model.addAttribute("instructors", instructors());
+        model.addAttribute("clients", clients());
+        model.addAttribute("days", days());
         return "section/update";
     }
 
     @RequestMapping(path = "/update/{id}", method = RequestMethod.POST)
     public String update(@Valid Section section, BindingResult result) {
 
-        if (section.getClients().size()>section.getMaxPerson()){
+        if (section.getClients().size() > section.getMaxPerson()) {
             return "redirect:/blad";
         }
 
@@ -119,10 +120,22 @@ public class SectionController {
         List<User> all = userService.findAll();
         return all;
     }
+
     @ModelAttribute("clients")
     public List<Client> clients() {
         List<Client> all = clientService.findAll();
         return all;
     }
-
- }
+    @ModelAttribute("days")
+    public List<String> days() {
+        List<String> days = new ArrayList<>();
+        days.add("Mon");
+        days.add("Tue");
+        days.add("Wed");
+        days.add("Thu");
+        days.add("Fri");
+        days.add("Sat");
+        days.add("Sun");
+        return days;
+    }
+}
