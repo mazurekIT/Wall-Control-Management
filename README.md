@@ -4,7 +4,7 @@ Projekt zaliczeniowy kursu CodersLab.
 Aplikacji typu CRM służąca do zarządzania ściankami wspinaczkowymi.
 
 Funkcje: 
-- logowania jako adminiostrator i pracownik. Administrator posiada dostęp do wszystkich funkcji, pracownik ma ograniczony dostęp, , brak dostępu do wszystkich funkcji dla niezalogowanych użytkowników. 
+- logowania jako adminiostrator i pracownik. Administrator posiada dostęp do wszystkich funkcji, pracownik ma ograniczony dostęp, brak dostępu do wszystkich funkcji dla niezalogowanych użytkowników. 
 - CRUD dla ścianek, pracowników, klientów, sekcji, biletów
 
 Rozwój aplikacji: 
